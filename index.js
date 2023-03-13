@@ -53,11 +53,11 @@ io.on("connection", (socket) => {
     switch(progress){
       case 0:
         //if the user replies, increase the progress and send the default message
-        io.to(sessionId).emit("chat message", {sender: "bot", message:`Press any of the following keys: <br>
-    1. Place Order <br>
-    2. Checkout Order <br>
-    3. Order History <br>
-    4. Cancel Order <br>`});
+        io.to(sessionId).emit("chat message", {sender: "bot", message:`Press any of the following keys: <br/>
+    1. Place Order <br/>  
+    2. Checkout Order <br/>
+    3. Order History <br />
+    4. Cancel Order <br/>`});
         progress = 1;
         break;
       case 1:

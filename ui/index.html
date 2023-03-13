@@ -10,14 +10,19 @@
   </head>
   <body>
     <main>
-        <h1>We will like to have your request.</h1>  
-        <section id="messages"></section>
+        <h1>Welcome to Foodies Home page.</h1>  
+
+        <section class="chatbot">
+          <h3>Foodies Chatbot</h3>
+          <section id="messages"></section>
 
         <!--Form to submit message -->
           <form id="form">
-            <input id="message-input" type="text">
-            <button type="submit">Send</button>
+            <input id="chat_input" type="text">
+            <button type="submit" class="send_btn">Send</button>
           </form>
+        </section>
+
 
     </main>
     <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
