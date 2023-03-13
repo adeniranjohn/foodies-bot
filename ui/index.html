@@ -11,8 +11,16 @@
   <body>
     <main>
         <h1>We will like to have your request.</h1>  
+        <section id="messages"></section>
+
+        <!--Form to submit message -->
+          <form id="form">
+            <input id="message-input" type="text">
+            <button type="submit">Send</button>
+          </form>
+
     </main>
     <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
-    <script> var socket = io()</script>
+    <script src="./main.js"></script>
   </body>
 </html>
