@@ -1,45 +1,75 @@
 body { 
     margin: 0; 
-    padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    font-family: 'Sono', sans-serif;
+ }
 
-#form { 
+ main {
+    height: 100vh;
+ }
+form#form { 
     display: flex;
     box-sizing: border-box; 
     flex-direction: row;
+    padding: 1em;
+    margin: 0 auto;
+
+
 }
 
 input#chat_input {
     flex: 1 1 auto;
-    border: 2px solid green; 
+    border: 2px solid #023e73; 
+    border-radius: 0.5em;
     margin: 0  0.5em  0 0;
     padding: 0.5em;
+    font-size: 1.25em;
+
 }
 
-#send_btn { 
-    background: none; 
-    border: none; 
-    background-color: burlywood;
-    padding: 0 1rem; 
-    margin: 0.25rem; 
-    border-radius: 3px; 
-    outline: none; 
-    color: green; 
+button#send_btn { 
+
+    padding: 0 1rem;  
+    border-radius: 0.5em; 
+    border: none;
+    background-color: #f2ab6d;
+    color: white;
 }
 
 section.chatbot {
-    max-width: 20rem;
+    min-width: 100%;
     position: fixed;
-    bottom: 2rem;
-    max-height: 20rem;
-    border: 1em solid red;
+    bottom: 0;
+    right: 0;
+    max-height: 30rem;
     overflow: scroll;
+
+    }
+
+    main h1 {
+        text-align: center;
+        line-height:2em;
+        font-size: 4em;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+    }
+
+    h1 > span.welcome {
+        letter-spacing: 0;
+        font-style: italic;
+        font-size: 1em;
+        font-weight: 100;
+    }
+    main p {
+        text-align: center;
+        line-height: 1.25;
+        font-size: 1.5em;
     }
 
 div.message {
-    margin: 1em;
-    padding: 1em;
+
     display: flex;
     flex-direction:column;
+    margin-top:  1em 0;
 }
 
 div.right {
@@ -47,14 +77,15 @@ div.right {
 }
 div.message span.message{
     padding: 0.5rem;
-    background-color: darkseagreen;
-    border-radius: 0.25em;
+    background-color: #023e73;
+    color: white;
+    border-radius: 0.5em;
     width: fit-content;
-    font-size: 1.5em;
 
 }
 
 span.sender {
     font-style: italic;
     font-size: 1.25em;
+    padding: 0.5em;
 }

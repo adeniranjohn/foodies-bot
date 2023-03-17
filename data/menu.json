@@ -1,8 +1,21 @@
 {
-    "menu": {
-        "1": "Rice and Chicken",
-        "2": "Fried Rice and Chicken",
-        "3":"Eba and Ogbono soup with beef",
-        "4": "Bread and Egg with Cold chilled tea"
-    }
+    "welcome_message":  {
+        "sender": "bot", 
+        "message": "Hi my name is Foodies Bot"
+    },
+    "first_menu": {
+        "sender": "bot",
+        "message" : "Press any of the following keys <br>Select 1 to Place an order <br>Select 99 to checkout order <br>Select 98 to see order history <br>Select 97 to see current order <br>Select 0 to cancel order"
+    },
+    "menu": 
+        [
+        { "food": "Jollof rice and Chicken", "price": 500 } ,
+        {"food":"Fried Rice and Chicken", "price": 400},
+        {"food": "Eba and Ogbono soup with beef", "price": 680},
+        {"food": "Bread and Egg with Cold chilled tea", "price":540},
+        {"food":"Pounded yam and Efo riro", "price": 650 },
+        {"food":"Amala and Ewedu soup with Croaker fish", "price": 900},
+        {"food":"Akara and Pap", "price":200},
+        {"food":"Yam porridge and Croaker fish", "price": 400}]
+    
 }
