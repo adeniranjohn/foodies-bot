@@ -4,7 +4,7 @@ const path = require("path");
 const http = require("http");
 const session = require("express-session");
 const data = require("./data/menu.json");
-
+const PORT = process.env.PORT || 3000
 
 const app = express();
 
@@ -34,7 +34,6 @@ io.engine.use(sessionMiddleware);
 
 //listening for user connection
 io.on("connection", (socket) => {
-  console.log("a user connected");
   const session = socket.request.session;
   const sessionId = session.id;
   socket.join(sessionId);
@@ -47,7 +46,6 @@ io.on("connection", (socket) => {
   //listen for the chat message event from the client
   socket.on("chat message", (message) => {
 
-    console.log(message);
     //output the user message to the DOM by emitting the chat message event to the client
     io.to(sessionId).emit("chat message", { sender: "user", message });
     //logic to check the user's progress
@@ -58,11 +56,18 @@ io.on("connection", (socket) => {
     switch (progress) {
       case 0:
         io.to(sessionId).emit("chat message", data.first_menu);
+        orders = [];
         progress = 1;
         break;
       case 1:
         let botresponse = "";
         switch (message) {
+          case "0": 
+          botresponse = `You selected option ${message} to Cancel order<br/>
+          We hate to see you go, check us back at your convenience.
+              <br>Select 1 to View menu`;
+
+          break;
           case "1":
             let i = 1;
             botresponse = "You selected option 1, here is the menu <br/>";
@@ -181,19 +186,17 @@ io.on("connection", (socket) => {
             case "97":
               botresponse = `You selected option ${message} to see current order<br/>
               <strong>
-                  ${data.menu[message - 2].food} </strong> has been added to your order
+                  ${orders[orders.length -1 ].food} </strong> is the current order.
                   <br>Select 1 to View menu 
                   <br>Select 99 to Checkout order 
                   <br>Select 98 to see Order history 
                   <br>Select 97 to see Current order 
                   <br>Select 0 to Cancel order`;
-                  orders[orders.length] = data.menu[message - 2];
   
               break;
           case "98":
             botresponse =
               `You selected option ${message} <br /><strong> Order history </strong><br/>`;
-              console.log(orders);
               orders.forEach((item) => {
                 botresponse += `${item.food} at ${item.price}naira <br/>`
               });
@@ -202,10 +205,10 @@ io.on("connection", (socket) => {
             break;
           case "99":
             botresponse = `You selected option ${message} <br /> Checkout your order`;
+            let totals = orders.reduce((total, item) => item.price + total, 0);
+            botresponse += `<br/>Total amount is <strong>${totals}naira</strong> for ${orders.length} items`;
             break;
           default: //if the user enters an invalid option, we send the default message
-            console.log(progress);
-            console.log(message);
             botresponse =
               `Invalid option. Kindly follow the below instruction<br> ` +
               data.first_menu.message;
@@ -232,6 +235,6 @@ io.on("connection", (socket) => {
 });
 
 //starting the server
-server.listen(3000, () => {
-  console.log("listening on :3000");
+server.listen(PORT, () => {
+  console.log(`listening on localhost:${PORT}`);
 });
