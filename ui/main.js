@@ -5,7 +5,13 @@ const form = document.querySelector("form#form");
 const chat_input = document.querySelector('#chat_input');
 const send_btn = document.querySelector('#send_btn');
 
-messages.scrollTop = messages.scrollHeight - messages.clientHeight;
+let orders;
+if(localStorage.getItem("orders") == null){
+  orders = [];
+}else{
+  orders = JSON.parse(localStorage.getItem("orders"));
+}
+console.log(orders)
 
 const messageSender = (message) => {
 

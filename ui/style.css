@@ -3,9 +3,7 @@ body {
     font-family: 'Sono', sans-serif;
  }
 
- main {
-    height: 100vh;
- }
+
 form#form { 
     display: flex;
     box-sizing: border-box; 
@@ -40,8 +38,6 @@ section.chatbot {
     position: fixed;
     bottom: 0;
     right: 0;
-    max-height: 30rem;
-    overflow: scroll;
 
     }
 

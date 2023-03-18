@@ -5,7 +5,7 @@
     },
     "first_menu": {
         "sender": "bot",
-        "message" : "Press any of the following keys <br>Select 1 to Place an order <br>Select 99 to checkout order <br>Select 98 to see order history <br>Select 97 to see current order <br>Select 0 to cancel order"
+        "message" : "Press any of the following keys <br />Select 1 to Place an order <br />Select 99 to checkout order <br />Select 98 to see order history <br />Select 97 to see current order <br />Select 0 to cancel order"
     },
     "menu": 
         [
@@ -16,6 +16,7 @@
         {"food":"Pounded yam and Efo riro", "price": 650 },
         {"food":"Amala and Ewedu soup with Croaker fish", "price": 900},
         {"food":"Akara and Pap", "price":200},
-        {"food":"Yam porridge and Croaker fish", "price": 400}]
+        {"food":"Yam porridge and Croaker fish", "price": 400}
+    ]
     
 }
