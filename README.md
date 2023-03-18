@@ -1,7 +1,12 @@
 # Foodies-Bot
 This is a bot program that interacts with customers to take orders.
 
-Developement - npm run dev
+### Requirements
+Nodejs
+Git
 
-Production - npm run start
+- git clone git@github.com:adeniranjohn/foodies-bot.git
+- cd foodies-bot
+- npm install
+- npm run dev (Development - listen on PORT-3000), npm run start (Production)
 
